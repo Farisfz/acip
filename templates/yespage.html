@@ -13,21 +13,20 @@
 	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/styleyes.css') }}" />
 
 </head>
 
 <body>
 <div class="container">
-	<div class="form-submit">
-        <a class="home" href="{{ url_for('home') }}">Predict Again</a>
-    </div>
 	<div id="notfound">
 		<div class="notfound">
 			<div class="notfound-40">
-				<div></div>
 				<img src="static/images/caution.png" alt="caution" class="center">
 			</div>
+			<h2>CAREFUL!</h2>
+			<p>You have a High Risk of having a Stroke!</p>
+			<a href="{{ url_for('home') }}">PREDICT AGAIN</a>
 		</div>
 	</div>
 </div>
