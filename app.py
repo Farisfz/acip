@@ -8,11 +8,11 @@ app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
 #default page of our web-app
-
 @app.route('/')
 def prescreen():
     return render_template('prescreen.html')
 
+#form page for user's input
 @app.route('/menu')
 def home():
     return render_template('index.html')
@@ -24,7 +24,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     int_features = [float(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
+    final_features = [np.array(int_features) ]
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
